@@ -1,50 +1,101 @@
-50;8.0;; The Rookie;36,358;2018– 
-51;8.4;; O Conto da Aia;218,542;2017– 
-52;8.5;; Borgen;24,847;2010–2022
-53;9.0;; Ataque dos Titãs;350,580;2013–2023
-54;8.6;; Shameless;232,002;2011–2021
-55;8.0;; Chicago Fire: Heróis Contra o Fogo;55,560;2012– 
-56;7.5;; Teerã;16,161;2020– 
-57;8.4;; Star Wars: A Guerra dos Clones;89,169;2008–2020
-58;8.8;; It's Always Sunny in Philadelphia;218,461;2005– 
-59;8.4;; Lei & Desordem;297,777;2013–2021
-60;7.5;; All American;10,693;2018– 
-61;8.9;; True Detective;550,956;2014–2019
-62;8.0;; História de Horror Americana;308,354;2011– 
-63;8.3;; Como Eu Conheci Sua Mãe;666,277;2005–2014
-64;8.4;; Lost;539,274;2004–2010
-65;8.5;; Bosch;67,417;2014–2021
-66;5.9;42; Jurassic Park III;317,623;2001
-67;8.4;; Sex Education;264,075;2019– 
-68;8.1;; The Good Doctor;90,278;2017– 
-69;8.7;; The Crown;192,835;2016– 
-70;8.1;; Castle;159,651;2009–2016
-71;9.2;; Rick e Morty;480,678;2013– 
-72;7.1;72; Midsommar: O Mal Não Espera a Noite;292,457;2019
-73;8.9;; Fargo;364,311;2014– 
-74;7.7;; Diários de um Vampiro;312,781;2009–2017
-75;8.7;; Dr. House;451,045;2004–2012
-76;8.4;78; Vingadores: Ultimato;1,066,514;2019
-77;6.5;52; Animais Fantásticos: Os Crimes de Grindelwald;274,951;2018
-78;6.8;; Glee: Em Busca da Fama;146,373;2009–2015
-79;8.2;; The Witcher;469,576;2019– 
-80;8.1;63; Piratas do Caribe: A Maldição do Pérola Negra;1,100,408;2003
-81;8.7;; Dark;359,428;2017–2020
-82;8.5;; Community;255,317;2009–2015
-83;8.6;; Filhos da Anarquia;289,835;2008–2014
-84;6.8;; Fear the Walking Dead;127,876;2015– 
-85;7.6;83; Era Uma Vez Em... Hollywood;695,133;2019
-86;7.0;; Star Trek: Discovery;119,791;2017– 
-87;7.9;82; Entre Facas e Segredos;595,941;2019
-88;7.5;; Jovem Sheldon;55,946;2017– 
-89;6.9;; 9-1-1: Lone Star;13,835;2020– 
-90;7.8;; Bones;154,846;2005–2017
-91;8.2;75; O Lobo de Wall Street;1,351,425;2013
-92;8.1;; O Mentalista;180,994;2008–2015
-93;8.2;; Gilmore Girls: Tal Mãe, Tal Filha;120,365;2000–2007
-94;8.1;; Chicago P.D.: Distrito 21;37,026;2014– 
-95;8.2;; Grace and Frankie;50,605;2015–2022
-96;8.2;; Animal Kingdom;33,830;2016–2022
-97;7.0;; P-Valley;3,877;2020– 
-98;8.6;; Atlanta;67,987;2016–2023
-99;7.6;65; Harry Potter e a Pedra Filosofal;757,065;2001
+Rank;Imdb;Metascore;Filme;Votos;Ano
+1;8.7;; Stranger Things;1,052,567;2016– 
+2;8.7;; The Boys;391,775;2019– 
+3;8.8;; Peaky Blinders: Sangue, Apostas e Navalhas;500,680;2013–2022
+4;8.8;; Better Call Saul;424,540;2015–2022
+5;8.4;; Barry;71,498;2018– 
+6;9.2;; Game of Thrones;2,000,610;2011–2019
+7;7.9;; For All Mankind;33,117;2019– 
+8;8.0;; The Orville;73,376;2017– 
+9;8.4;; Love, Death & Robots;154,502;2019– 
+10;9.5;; Breaking Bad;1,754,662;2008–2013
+11;8.5;; Ozark;294,739;2017–2022
+12;8.7;; Yellowstone;115,897;2018– 
+13;8.2;; The Walking Dead;951,828;2010–2022
+14;8.6;; Westworld;480,151;2016– 
+15;7.6;; Anatomia de Grey;296,920;2005– 
+16;6.9;59; Jurassic World: O Mundo dos Dinossauros;629,911;2015
+17;6.1;51; Jurassic World: Reino Ameaçado;306,131;2018
+18;9.0;; Vida de Escritório;552,571;2005–2013
+19;8.7;; O Mandaloriano;439,079;2019– 
+20;8.5;; Sobrenatural;431,691;2005–2020
+21;6.2;56; Diário de um Banana;49,525;2010
+22;8.0;; The Umbrella Academy;212,590;2019–2022
+23;7.7;; Evil: Contatos Sobrenaturais;22,690;2019– 
+24;8.1;; Mentes Criminosas;191,156;2005–2020
+25;8.4;; Euphoria;163,146;2019– 
+26;8.0;; Com Amor, Victor;16,080;2020–2022
+27;7.8;; NCIS: Investigações Criminais;142,790;2003– 
+28;7.5;; Mayans M.C.;17,802;2018– 
+29;8.7;; This Is Us;138,089;2016–2022
+30;7.6;; Flash;339,232;2014– 
+31;8.4;; Outlander;155,112;2014– 
+32;8.5;; O Último Reino;130,770;2015–2022
+33;7.1;; A Comissária de Bordo;52,054;2020– 
+34;8.6;; Doctor Who;219,745;2005– 
+35;9.3;; A Escuta;328,498;2002–2008
+36;8.5;; Família Moderna;413,502;2009–2020
+37;8.0;; Lista Negra;241,300;2013– 
+38;8.8;; Black Mirror;522,194;2011–2019
+39;8.2;; Big Bang: A Teoria;786,891;2007–2019
+40;8.8;; Ted Lasso;184,669;2020– 
+41;7.3;; Legacies;29,972;2018–2022
+42;7.3;; Bridgerton;127,047;2020– 
+43;8.1;; Lúcifer;310,868;2016–2021
+44;8.5;; Vikings;513,006;2013–2020
+45;3.3;; 365 dni;83,480;2020
+46;8.8;; Succession;129,639;2018– 
+47;8.5;; Suits;398,716;2011–2019
+48;6.6;; Riverdale;140,287;2017–2022
+49;8.7;; Downton Abbey;200,944;2010–2015
+50;8.0;; The Rookie;36,402;2018– 
+52;8.5;; Borgen;24,906;2010–2022
+53;9.0;; Ataque dos Titãs;350,774;2013–2023
+54;8.6;; Shameless;232,076;2011–2021
+55;8.0;; Chicago Fire: Heróis Contra o Fogo;55,580;2012– 
+56;7.5;; Teerã;16,247;2020– 
+57;8.4;; Star Wars: A Guerra dos Clones;89,331;2008–2020
+58;8.8;; It's Always Sunny in Philadelphia;218,532;2005– 
+59;8.4;; Lei & Desordem;297,943;2013–2021
+60;7.5;; All American;10,714;2018– 
+61;8.9;; True Detective;551,141;2014–2019
+62;8.0;; História de Horror Americana;308,395;2011– 
+63;8.3;; Como Eu Conheci Sua Mãe;666,463;2005–2014
+64;8.4;; Lost;539,387;2004–2010
+65;8.5;; Bosch;67,490;2014–2021
+66;5.9;42; Jurassic Park III;317,818;2001
+67;8.4;; Sex Education;264,254;2019– 
+68;8.1;; The Good Doctor;90,328;2017– 
+69;8.7;; The Crown;192,917;2016– 
+70;8.1;; Castle;159,689;2009–2016
+71;9.2;; Rick e Morty;480,904;2013– 
+72;7.1;72; Midsommar: O Mal Não Espera a Noite;292,800;2019
+73;8.9;; Fargo;364,410;2014– 
+74;7.7;; Diários de um Vampiro;312,862;2009–2017
+75;8.7;; Dr. House;451,171;2004–2012
+76;8.4;78; Vingadores: Ultimato;1,067,050;2019
+77;6.5;52; Animais Fantásticos: Os Crimes de Grindelwald;275,170;2018
+78;6.8;; Glee: Em Busca da Fama;146,407;2009–2015
+79;8.2;; The Witcher;469,738;2019– 
+80;8.1;63; Piratas do Caribe: A Maldição do Pérola Negra;1,100,815;2003
+81;8.7;; Dark;359,627;2017–2020
+82;8.5;; Community;255,412;2009–2015
+83;8.6;; Filhos da Anarquia;289,920;2008–2014
+84;6.8;; Fear the Walking Dead;127,901;2015– 
+85;7.6;83; Era Uma Vez Em... Hollywood;695,566;2019
+86;7.0;; Star Trek: Discovery;119,842;2017– 
+87;7.9;82; Entre Facas e Segredos;596,245;2019
+88;7.5;; Jovem Sheldon;55,972;2017– 
+89;6.9;; 9-1-1: Lone Star;13,854;2020– 
+90;7.8;; Bones;154,870;2005–2017
+91;8.2;75; O Lobo de Wall Street;1,351,901;2013
+92;8.1;; O Mentalista;181,054;2008–2015
+93;8.2;; Gilmore Girls: Tal Mãe, Tal Filha;120,408;2000–2007
+94;8.1;; Chicago P.D.: Distrito 21;37,045;2014– 
+95;8.2;; Grace and Frankie;50,638;2015–2022
+96;8.2;; Animal Kingdom;33,886;2016–2022
+97;6.9;; P-Valley;3,918;2020– 
+98;8.6;; Atlanta;68,033;2016–2023
+99;7.6;65; Harry Potter e a Pedra Filosofal;757,219;2001
+100;6.8;; Big Sky;17,634;2020– 
+101;9.0;84; Batman: O Cavaleiro das Trevas;2,573,978;2008
