@@ -1,10 +1,8 @@
 import requests
 import bs4
-import os
-import smtplib
-import email.message
-import win32com.client as win32
+import os, shutil
 
+#Variaveis matrizes
 rank = []
 imdb = []
 meta = []
@@ -12,18 +10,29 @@ movie = []
 vote = []
 year = []
 picture = []
+
+#Variaveis de count
 count = 1
 control = 1
 numFoto = 0
 
 site = requests.get("https://www.imdb.com/search/title/?release_date=2000-01-01,2021-01-01&sort=num_votes,desc&start=1&ref_=adv_nxt")
+
 #Gerando fotos 
 pageImage = bs4.BeautifulSoup(site.content, "html.parser")
 
+#Limpando a pasta de fotos ou criando ela
+if os.path.exists("./fotos"):
+    for the_file in os.listdir('./fotos'):
+        file_path = os.path.join('./fotos', the_file)
+        os.unlink(file_path) # mesma coisa que remove()
+else:
+    os.mkdir('./fotos')
+
 for image in pageImage.findAll('img', width="67"):
     photoOrigin = image['loadlate']
-    r = requests.get(photoOrigin).content
-    picture.append(r)
+    request = requests.get(photoOrigin).content
+    picture.append(request)
 for numFoto in range(20):
     imageFile = open(os.path.join('fotos', os.path.basename(f"foto{numFoto+1}.jpg")), 'wb+')
     imageFile.write(picture[numFoto])
@@ -31,7 +40,7 @@ for numFoto in range(20):
     imageFile.close()
 
 #Gerando o csv
-while (count <= 2000):
+while (count <= 100):
     pageHtml = bs4.BeautifulSoup(site.content, "html.parser")
     move_infos = pageHtml.findAll('div', attrs={'class': 'lister-item mode-advanced'})
     for movies in move_infos:
@@ -43,19 +52,9 @@ while (count <= 2000):
         year.append(movies.h3.find('span', class_='lister-item-year text-muted unbold').text.replace('(', '').replace(')', ''))
 
     count += 50
-    site = requests.get("https://www.imdb.com/search/title/?release_date=2000-01-01,2021-01-01&sort=num_votes,desc&start=" + str(count) +"&ref_=adv_nxt")
-    print(site)
-
-#Gerando o text
-while control <= 20:
-    if control == 0:
-        file = open('ranking.txt', 'x')
-        file.write(f"{'#' : ^5}{'imdb' : ^8}{'metascore' : ^9}{'filme' : ^40}{'votos' : ^18}{'ano' : ^8}")
-        control += 1
-    else:
-        file = open('ranking.txt', 'a')
-        file.write(f"'\n'{rank[control-1] : ^5}{imdb[control-1] : ^8}{meta[control-1] : ^9}{movie[control-1] : ^40}{vote[control-1] : ^18}{year[control-1] : ^8}")
-        control += 1
+    url = "https://www.imdb.com/search/title/?release_date=2000-01-01,2021-01-01&sort=num_votes,desc&start=" + str(count) +"&ref_=adv_nxt"
+    site = requests.get(url)
+    print(url)
 
 with open("Ranking.csv", "w") as arquivo:
     arquivo.write("Rank;Imdb;Metascore;Filme;Votos;Ano\n")
@@ -67,3 +66,13 @@ with open("Ranking.csv", "w") as arquivo:
                       votes + ";" +
                       years + "\n")
 
+#Gerando o .txt
+while control <= 20:
+    if control == 0:
+        file = open('ranking.txt', 'x')
+        file.write(f"{'#' : ^5}{'imdb' : ^8}{'metascore' : ^9}{'filme' : ^40}{'votos' : ^18}{'ano' : ^8}")
+        control += 1
+    else:
+        file = open('ranking.txt', 'a')
+        file.write(f"'\n'{rank[control-1] : ^5}{imdb[control-1] : ^8}{meta[control-1] : ^9}{movie[control-1] : ^40}{vote[control-1] : ^18}{year[control-1] : ^8}")
+        control += 1
