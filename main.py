@@ -94,7 +94,7 @@ else:
     print("Até mais!\n")
 
 print("\nPrograma acabado! Obrigado pelo uso!")
-print("Coloboração de desenvolvimento: Eduardo Loran, Gustavo Fischer, Cassiano Henrique, ")
+print("Coloboração de desenvolvimento: Eduardo Loran, Gustavo Fischer, Cassiano Henrique, Katherine Lanz ")
 print("Instrução do Professor Leonardo Garcia Tampelini")
 print("Inistuição Biopark")
 print("Versão 0.1 - 2022")
