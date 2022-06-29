@@ -1,8 +1,8 @@
 import requests
 import bs4
-import os, shutil
+import os
 
-#Variaveis matrizes
+# Variaveis matrizes
 rank = []
 imdb = []
 meta = []
@@ -11,35 +11,36 @@ vote = []
 year = []
 picture = []
 
-#Variaveis de count
+# Variaveis de counts
 count = 1
 control = 1
 numFoto = 0
 
 print("\nOla!! Você executou um webcraping, para buscar registros do site imdb.\n")
-print("Lembrando, programa criado com intuido academico, para fins de conhecimento de webcraping através da linguagém de programação python.\n")
+print("Lembrando, programa criado com intuido academico, para fins de conhecimento de webcraping através da linguagem de programação python.\n")
 print("Manual do programa:")
 print("- Gera um arquivo chamado raking.csv, através da quantidade de filmes escolhida.")
 print("- Gera um arquivo chamado ranking.txt, somente com um resumo dos 20 primeiros filmes escolhidos.")
 print("- Gerado as 20 primeiras imagens da capa dos filmes, e armazena em uma pasta chamada fotos.\n")
 
 
-execProg = input('Deseja continuar com a execução do programa [S/N] \n').strip()[0].upper()
+execProg = input(
+    'Deseja continuar com a execução do programa [S/N] \n').strip()[0].upper()
 
 if execProg == 'S':
-#Request na site do imdb
+    # Request na site do imdb
     rangeMovie = int(input("Digite a quantidade de filmes que deseja buscar:\n"))
     url = "https://www.imdb.com/search/title/?release_date=2000-01-01,2021-01-01&sort=num_votes,desc&start=1&ref_=adv_nxt"
     site = requests.get(url)
 
-    #Gerando fotos 
+    # Gerando fotos
     pageImage = bs4.BeautifulSoup(site.content, "html.parser")
 
-    #Limpando a pasta de fotos ou criando ela
+    # Limpando a pasta de fotos ou criando ela
     if os.path.exists("./fotos"):
         for the_file in os.listdir('./fotos'):
             file_path = os.path.join('./fotos', the_file)
-            os.unlink(file_path) # mesma coisa que remove()
+            os.unlink(file_path)  # mesma coisa que remove()
     else:
         os.mkdir('./fotos')
 
@@ -48,12 +49,13 @@ if execProg == 'S':
         request = requests.get(photoOrigin).content
         picture.append(request)
     for numFoto in range(20):
-        imageFile = open(os.path.join('fotos', os.path.basename(f"foto{numFoto+1}.jpg")), 'wb+')
+        imageFile = open(os.path.join(
+            'fotos', os.path.basename(f"foto{numFoto+1}.jpg")), 'wb+')
         imageFile.write(picture[numFoto])
         numFoto += 1
         imageFile.close()
 
-    #Gerando o csv
+    # Gerando o csv
     while (count <= rangeMovie):
         pageHtml = bs4.BeautifulSoup(site.content, "html.parser")
         move_infos = pageHtml.findAll('div', attrs={'class': 'lister-item mode-advanced'})
@@ -66,7 +68,7 @@ if execProg == 'S':
             year.append(movies.h3.find('span', class_='lister-item-year text-muted unbold').text.replace('(', '').replace(')', ''))
 
         count += 50
-        url = "https://www.imdb.com/search/title/?release_date=2000-01-01,2021-01-01&sort=num_votes,desc&start=" + str(count) +"&ref_=adv_nxt"
+        url = "https://www.imdb.com/search/title/?release_date=2000-01-01,2021-01-01&sort=num_votes,desc&start=" + str(count) + "&ref_=adv_nxt"
         site = requests.get(url)
         print("Aguarde! Buscando registros......")
 
@@ -74,28 +76,26 @@ if execProg == 'S':
         arquivo.write("Rank;Imdb;Metascore;Filme;Votos;Ano\n")
         for ranks, imdbs, metas, movies, votes, years in zip(rank, imdb, meta, movie, vote, year):
             arquivo.write(ranks + ";" +
-                        imdbs + ";" +
-                        metas + "; " +
-                        movies + ";" +
-                        votes + ";" +
-                        years + "\n")
+                          imdbs + ";" +
+                          metas + "; " +
+                          movies + ";" +
+                          votes + ";" +
+                          years + "\n")
 
-    #Gerando o .txt
+    # Gerando o .txt
     with open('ranking.txt', 'w') as file:
+        file.write(
+            f"{'#' : ^5}{'imdb' : ^8}{'metascore' : ^9}{'filme' : ^40}{'votos' : ^18}{'ano' : ^8}")
         while control <= 20:
-            file.write(f"{'#' : ^5}{'imdb' : ^8}{'metascore' : ^9}{'filme' : ^40}{'votos' : ^18}{'ano' : ^8}")
-            file.write(f"'\n'{rank[control-1] : ^5}{imdb[control-1] : ^8}{meta[control-1] : ^9}{movie[control-1] : ^40}{vote[control-1] : ^18}{year[control-1] : ^8}")
+            file.write(
+                f"'\n'{rank[control-1] : ^5}{imdb[control-1] : ^8}{meta[control-1] : ^9}{movie[control-1] : ^40}{vote[control-1] : ^18}{year[control-1] : ^8}")
             control += 1
 
     print("\nExecução terminada!")
-    print("Pasta Fotos, arquivo ranking.csv e rankingtxt. Criados com sucesso.\n")
-        
-else:
-    print("Até mais!\n")
+    print("Pasta Fotos, arquivo ranking.csv e rankingtxt. Criados com SUCESSO.\n")
 
-print("\nPrograma acabado! Obrigado pelo uso!")
-print("Coloboração de desenvolvimento: Eduardo Loran, Gustavo Fischer, Cassiano Henrique, Katherine Lanz ")
+print("\nPrograma acabado! Obrigado pelo uso!\n")
+print("Coloboração de desenvolvimento: Cassiano Henrique, Eduardo Loran, Gustavo Fischer, Katherine Lanz ")
 print("Instrução do Professor Leonardo Garcia Tampelini")
 print("Inistuição Biopark")
-print("Versão 0.1 - 2022")
-
+print("Versão 0.1 - 2022\n")
